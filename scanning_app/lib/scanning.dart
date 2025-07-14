@@ -6,15 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:csv/csv.dart';
 import 'package:google_mlkit_barcode_scanning/google_mlkit_barcode_scanning.dart' as mlkit;
+import 'package:scanning_app/pages/home_page.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final cameras = await availableCameras();
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: BarcodeScannerPage(cameras: cameras),
-  ));
-}
 
 class BarcodeScannerPage extends StatefulWidget {
   final List<CameraDescription> cameras;
